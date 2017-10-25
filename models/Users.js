@@ -8,6 +8,9 @@ module.exports = function(sequelize, DataTypes) {
       validate : {
         notEmpty : true
       },
+      beforeValidate : function() {
+        
+      }
     },//end name
     created_by : {
       type : DataTypes.INTEGER,
