@@ -13,6 +13,6 @@ app.use(bodyParser.json());
 app.use('/api', routes);
 
 app.listen(PORT, () => {
-  db.sequelize.sync({ force: true });
+  db.sequelize.sync({ force: false });
   console.log(`Server is now listening on ${PORT}`);
 });

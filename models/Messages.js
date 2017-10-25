@@ -7,21 +7,21 @@ module.exports = function(sequelize, DataTypes) {
       validate : {
         isEmpty : false
       }
-    },//end body
-    topic_id : { //belongsTo Topic
+    },
+    topic_id : {
       type : DataTypes.INTEGER,
       references : {
-        model : Topic,
-        key : id
+        model : 'topics', //references the TABLE NAME
+        key : 'id'
       }
-    },//end FK
-    author_id : { //belongsTo User
+    },
+    author_id : {
       type : DataTypes.INTEGER,
       references : {
-        model : User,
-        key : id
+        model : 'users', //references the TABLE NAME
+        key : 'id'
       }
-    }//end FK
+    }
   }, {
     tableName : 'messages'
   });//end Message model
