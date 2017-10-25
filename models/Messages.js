@@ -2,6 +2,10 @@
 module.exports = function(sequelize, DataTypes) {
   const Message = sequelize.define('message', {
     body : { type: DataTypes.TEXT, unique : true },
+    allowNull : false,
+    validate : {
+      notEmpty : true
+    },
   }, {
     tableName : 'messages'
   });

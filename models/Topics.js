@@ -2,6 +2,10 @@
 module.exports = function(sequelize, DataTypes) {
   const Topic = sequelize.define('topic', {
     name : { type: DataTypes.STRING, unique : true },
+    allowNull : false,
+    validate : {
+      notEmpty : true
+    },
   }, {
     tableName : 'topics'
   });
