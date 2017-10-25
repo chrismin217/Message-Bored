@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const routes = require('./routes');
 const db = require('./models');
 
 const PORT = process.env.PORT || 3000;
@@ -9,7 +10,9 @@ app.use(express.static('public'));
 app.use(bodyParser({extended : true}));
 app.use(bodyParser.json());
 
+app.use('/api', routes);
+
 app.listen(PORT, () => {
-  db.sequelize.sync({ force: false });
+  db.sequelize.sync({ force: true });
   console.log(`Server is now listening on ${PORT}`);
 });

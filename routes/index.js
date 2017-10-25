@@ -1,0 +1,8 @@
+const express = require('express');
+const router = express.Router();
+
+const db = require('../models');
+const User = db.user;
+const Topic = db.topic;
+const Message = db.message;
+

@@ -2,33 +2,30 @@
 module.exports = function(sequelize, DataTypes) {
   const User = sequelize.define('user', {
     name : {
-      type: DataTypes.STRING,
-      primaryKey : true,
+      type : DataTypes.STRING,
       allowNull : false,
+      unique : true, 
       validate : {
-        notEmpty : true
-      },
-      beforeValidate : function() {
-        
+        isEmpty : false
       }
     },//end name
-    created_by : {
-      type : DataTypes.INTEGER,
+    created_by : { //hasMany topics
+      type : DataTypes.STRING,
       references : {
-        model : Topic,
-        key : 'id'
+        model : topic,
+        key : created_by
       }
     },//end FK
-    author_id : {
-      type : DataTypes.INTEGER,
+    author_id : { //hasMany messages
+      type : DataTypes.STRING,
       references : {
-        model : Message,
-        key : 'id'
+        model : message,
+        key : author_id 
       }
     }//end FK
   }, {
     tableName : 'users'
-  });//end User Model
+  });//end User model
 
   User.associate = function(models) {
     User.hasMany(models.topic);
