@@ -1,28 +1,37 @@
 var myApp = angular.module('myApp', ['ngRoute']);
 
-myApp.config(function ($routeProvider) {
+myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 
   $routeProvider
   .when('/', {
-    templateUrl : 'index.html',
+    template : '<h1>This is the main page.</h1>',
+    controller : 'mainController'
+  })
+  .when('/login', {
+    templateUrl : '/login.html',
+    controller : 'mainController'
+  })
+  .when('/logout', {
+    template : '<h1>This is the logout page.</h1>',
+    controller : 'mainController'
+  })
+  .when('/register', {
+    template : '<h1>This is the register page.</h1>',
     controller : 'mainController'
   })
   .when('/users', {
-    templateUrl : 'users.html',
+    template : '<h1>This is the users page.</h1>',
     controller : 'mainController'
   })
-  .when('/topics', {
-    templateUrl : 'topics.html',
+  .when('/latest', {
+    template : '<h1>This is the latest posts page.</h1>',
     controller : 'mainController'
   })
-  .when('/messages', {
-    templateUrl : 'messages.html',
-    controller : 'mainController'
+  .otherwise({
+    template : '<h1>Page Not Found.</h1>'
   });
-  
-});
 
-myApp.controller('myController', ['$scope', function($scope) {
+  $locationProvider.html5Mode(true);
   
 }]);
 

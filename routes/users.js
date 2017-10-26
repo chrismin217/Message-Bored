@@ -4,7 +4,6 @@ const router = express.Router();
 const db = require('../models');
 const User = db.user;
 
-//shows all users
 router.route('/users')
   .get((req, res) => {
     return User.findAll({
@@ -13,22 +12,20 @@ router.route('/users')
       }]
     })
     .then(data => {
-      res.render('partials/users', { title : 'Users'});
+      res.json(data);
       return;
     });
   })
-  //creates and responds with a new user
   .post((req, res) => {
     return User.create({
       name : req.body.name
     })
       .then(data => {
-        res.redirect();
+        res.json(data);
         return;
       });
   });
 
-//shows user and all user's messages
 router.route('/users/:id')
   .get((req, res) => {
     const id = req.params.id;
@@ -38,7 +35,7 @@ router.route('/users/:id')
       }]
     })
       .then(data => {
-        res.render('partials/user_single', { title : 'User' });
+        res.json(data);
         return;
       });
   });  

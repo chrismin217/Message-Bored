@@ -1,0 +1,21 @@
+body {
+  background-color: magenta;
+}
+
+#navBar {
+  border: 1px solid black;
+}
+
+#navBar li {
+  list-style-type: none;
+}
+
+#navBar li a {
+  text-decoration: none;
+}
+
+#navBar li a:hover {
+  color: cyan;
+  text-decoration: underline;
+}
+
