@@ -3,12 +3,17 @@ const bodyParser = require('body-parser');
 const routes = require('./routes');
 const db = require('./models');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 const app = express();
 
-app.use(express.static('public'));
-app.use(bodyParser({extended : true}));
+/*MIDDLEWARE*/
+app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.urlencoded({ extended : true }));
 app.use(bodyParser.json());
+
+app.get('*', (req, res) => {
+  return res.sendFile('/index.html', { root : __dirname + '/public'});
+});
 
 app.use('/api', routes);
 
