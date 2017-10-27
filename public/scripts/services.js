@@ -10,12 +10,12 @@ angular.module('myApp')
       });
   };
   
-  /*this.getSingleUser = function(id) {
+  this.getSingleUser = function(id) {
     return $http.get(api + '/' + id)
       .then(function(response) {
         console.log(response.data);
         return response.data;
       });
-  };*/
+  };
 
 }]);

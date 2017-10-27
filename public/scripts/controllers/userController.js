@@ -1,7 +1,9 @@
 angular.module('myApp')
-.controller('userController', ['$scope', 'UserService', function($scope, UserService) {
+.controller('userController', ['$scope', '$routeParams', 'UserService', function($scope, $routeParams, UserService) {
   
   console.log('userController has been called.');
+  var userId = $routeParams.id;
+
   $scope.firstName = 'Chris';
 
   $scope.users = [];
@@ -10,6 +12,11 @@ angular.module('myApp')
   $scope.users = UserService.getUsers()
     .then(function(response) {
       $scope.users = response;
+    });
+
+  $scope.singleUser = UserService.getSingleUser(userId)
+    .then(function(response) {
+      $scope.singleUser = response;
     });
 
 }]);
