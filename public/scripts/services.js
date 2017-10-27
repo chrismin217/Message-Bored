@@ -3,9 +3,10 @@ angular.module('myApp')
 
   var api = 'http://127.0.0.1:8080/api/users';
   this.getUsers = function() {
-    $http.get(api)
+    return $http.get(api)
       .then(function(response) {
         console.log(response.data);
+        return response.data;
       });
   };
 

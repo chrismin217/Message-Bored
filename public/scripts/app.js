@@ -4,8 +4,7 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
 
   $routeProvider
   .when('/', {
-    template : '<h1>Index</h1>', //careful, index.html infLoop
-    
+    templateUrl : '/views/home.html', //careful, url index.html infLoop
   })
   .when('/users', {
     templateUrl : '/views/users.html',
