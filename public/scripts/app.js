@@ -6,6 +6,14 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
   .when('/', {
     templateUrl : '/views/home.html'
   })
+  .when('/login', {
+    templateUrl : '/views/login.html',
+    controller : 'formController'
+  })
+  .when('/register', {
+    templateUrl : '/views/register.html',
+    controller : 'formController'
+  })
   .when('/users', {
     templateUrl : '/views/users.html',
     controller : 'userController'
@@ -15,7 +23,7 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
     controller : 'userController'
   })
   .otherwise({
-    template : '<h1>Trebek</h1>'
+    template : '<h1>Suck It Trebek</h1>'
   });
 
   $locationProvider.html5Mode(true);
