@@ -9,5 +9,13 @@ angular.module('myApp')
         return response.data;
       });
   };
+  
+  /*this.getSingleUser = function(id) {
+    return $http.get(api + '/' + id)
+      .then(function(response) {
+        console.log(response.data);
+        return response.data;
+      });
+  };*/
 
 }]);

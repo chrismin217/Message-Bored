@@ -4,10 +4,14 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
 
   $routeProvider
   .when('/', {
-    templateUrl : '/views/home.html', //careful, url index.html infLoop
+    templateUrl : '/views/home.html'
   })
   .when('/users', {
     templateUrl : '/views/users.html',
+    controller : 'userController'
+  })
+  .when('/users/:id', {
+    templateUrl : '/views/user_single.html',
     controller : 'userController'
   })
   .otherwise({
