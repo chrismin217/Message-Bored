@@ -12,8 +12,8 @@ router.route('/')
   })
   .post((req, res) => {
     return User.create(req.body)
-      .then(user => {
-        return res.json(user);
+      .then(newUser => {
+        return res.json(newUser);
       });
   });
 
