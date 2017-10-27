@@ -7,9 +7,9 @@
   <base href="/">
   
 </head>
-<body ng-app="myApp" ng-controller="mainController">
+<body ng-app="myApp">
  <h1>Hello World</h1>
-  {{ firstName }}
+  
  <div id="nav">
    <ul>
      <li><a href="/">Home</a></li>
@@ -18,12 +18,14 @@
    </ul>
  </div>
 
- <div ng-view></div>
+ <div ng-view>
+  
+ </div>
 
  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
  <script src="/scripts/app.js"></script>
- <script src="/scripts/controllers/mainController.js"></script>
+ <script src="/scripts/controllers/userController.js"></script>
  <script src="/scripts/services.js"></script>
 
 </body>

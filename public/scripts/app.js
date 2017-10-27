@@ -4,12 +4,12 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
 
   $routeProvider
   .when('/', {
-    template : '<h1>Test</h1>',  //this is what leads to infinite loop
-    controller : 'mainController' //be sure it is not /index.html
+    template : '<h1>Index</h1>', //careful, index.html infLoop
+    controller : 'mainController'
   })
   .when('/users', {
-    template : '<h1>Users</h1>', //this is also infinite looping
-    controller : 'mainController'
+    templateUrl : '/views/users.html',
+    controller : 'userController'
   })
   .otherwise({
     template : '<h1>Trebek</h1>'
