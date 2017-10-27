@@ -13,10 +13,13 @@ angular.module('myApp')
     };
     FormService.registerNewUser(newUser)
       .then(function(response) {
-        console.log(response);
         return;     
       });
-  };  
+  };
+
+  $scope.loginUser = function() {
+    console.log('Logging in with user : ' + $scope.username);
+  };
   
                        
 }]);

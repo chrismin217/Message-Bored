@@ -1,7 +1,7 @@
 <h1>Login Page</h1>
 
-<form action="/api/users/">
-  <input type="text" name="name" placeholder="Enter Username">
-  <input type="password" name="password" placeholder="Enter Password">
-  <input type="submit" value="Login">
+<form>
+  <input type="text" name="name" ng-model="username" placeholder="Username"><br><br>
+  <input type="password" name="password" ng-model="password" placeholder="Password"><br><br>
+  <button ng-click="loginUser()">Login</button>
 </form>
