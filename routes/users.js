@@ -11,6 +11,7 @@ router.route('/')
     });
   })
   .post((req, res) => {
+    console.log(req.body);
     return User.create(req.body)
       .then(newUser => {
         return res.json(newUser);
