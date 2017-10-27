@@ -11,8 +11,7 @@ router.route('/')
     });
   })
   .post((req, res) => {
-    const user = { name : req.body.name };
-    return User.create(user)
+    return User.create(req.body)
       .then(user => {
         return res.json(user);
       });
