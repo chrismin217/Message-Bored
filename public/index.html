@@ -1,12 +1,30 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/styles.css">
   <title>Message Bored</title>
+  <base href="/">
   
 </head>
-<body>
+<body ng-app="myApp" ng-controller="mainController">
  <h1>Hello World</h1>
+  {{ firstName }}
+ <div id="nav">
+   <ul>
+     <li><a href="/">Home</a></li>
+     <li><a href="/users">Users</a></li>
+     <li>======</li>
+   </ul>
+ </div>
+
+ <div ng-view></div>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+ <script src="/scripts/app.js"></script>
+ <script src="/scripts/controllers/mainController.js"></script>
+ <script src="/scripts/services.js"></script>
+
 </body>
 </html>
