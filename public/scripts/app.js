@@ -22,6 +22,14 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
     templateUrl : '/views/user_single.html',
     controller : 'userController'
   })
+  .when('/topics/:id', {
+    templateUrl : '/views/topic_single.html',
+    /*controller : 'topicController'*/
+  })
+  .when('/latest', {
+    templateUrl : '/views/latest.html',
+    /*controller : 'messageController'*/
+  })
   .otherwise({
     template : '<h1>Suck It Trebek</h1>'
   });
