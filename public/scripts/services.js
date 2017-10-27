@@ -1,10 +1,11 @@
 angular.module('myApp')
-.service('UserService', ['$http', '$log', function($http, $log) {
+.service('UserService', ['$http', function($http) {
 
+  var api = 'http://127.0.0.1:8080/api/users';
   this.getUsers = function() {
-    $http.get('/api/users')
-      .then(response => {
-        $log.info(response);
+    $http.get(api)
+      .then(function(response) {
+        console.log(response.data);
       });
   };
 

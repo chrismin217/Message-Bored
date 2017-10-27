@@ -5,7 +5,7 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
   $routeProvider
   .when('/', {
     template : '<h1>Index</h1>', //careful, index.html infLoop
-    controller : 'mainController'
+    
   })
   .when('/users', {
     templateUrl : '/views/users.html',
