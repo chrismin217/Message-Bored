@@ -1,14 +1,11 @@
 angular.module('myApp')
-.service('UserService', ['$http', function($http) {
-  
-}]);
+.service('UserService', ['$http', '$log', function($http, $log) {
 
-angular.module('myApp')
-.service('TopicService', ['$http', function($http) {
-  
-}]);
+  this.getUsers = function() {
+    $http.get('/api/users')
+      .then(response => {
+        $log.info(response);
+      });
+  };
 
-angular.module('myApp')
-.service('MessageService', ['$http', function($http) {
-  
 }]);

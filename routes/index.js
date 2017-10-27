@@ -1,10 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const db = require('../models');
-const User = db.user;
-const Topic = db.topic;
-const Message = db.message;
-
+const users = require('./users');
+router.use('/users', users);
 
 module.exports = router;

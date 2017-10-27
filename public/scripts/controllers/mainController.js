@@ -1,7 +1,13 @@
 angular.module('myApp')
-.controller('mainController', ['$scope', function($scope) {
+.controller('mainController', ['$scope', '$log', 'UserService', function($scope, $log, UserService) {
+
+  $scope.userService = UserService;
+  $log.info($scope.userService);
   
-  $scope.firstName = 'Chris';
-  
+  $scope.users = [];
+
+  $scope.getUsers = function(e) {
+    $scope.users = UserService.getUsers();
+  };
   
 }]);
